@@ -1,0 +1,40 @@
+BlackJack General Algorithm
+
+To wager for two players and a dealer in BlackJack, I will first create a class so that I can create x amount of players.
+In this class, I will set it so that the person can input the amount of players that want to play the game instead of just 2.
+This class will have a wager action, an amount of money they have left, and a starting amount of cash that they have.
+
+For the dealer, I will need to make an object that will allow the dealer to the do the same as well as shuffle and deal.
+
+How the game should work out:
+
+Inputs:
+	Players will input the amount of players, their name, and money they want to wager.
+Outputs:
+	1) outputs will include the total that each person has the value of cards that each player has.
+	2) outputs will also display if a person has busted (automatic out) and will also compare their value to other players.
+	3) output the amount of money to the winning player.
+
+What is the condition of the main loop? When does it stop?
+	The condition of the main loop is a loop that runs and checks to see if the players hit 0 and if they are eliminated or not.
+	When all players are elimited with the exception of one, the remaining player wins.
+
+How do you figure out who has won?
+	To figure out who has one, they have to be the last person standing without the value of 0 in the game. So if the loop checks
+	and there is only one person left in the game, the person has won. It will display the amount of money they have won.
+
+How do you calculate earnings/losses per player?
+	To calculate who has loss and earned, the program is to compare the values of their cards to each other in every
+	single round in order to determine the winner. From this point, the amount wagered by each person is to be added
+	onto the total of the winning person and subtracted from the total amount of money from the losing players.
+
+How would your algorithm change to accomodate more than 2 players?
+	To change the program to create more than two players, as mentioned above, I will create a class that will create the amount
+	of people in the game where the person can input their name and the amount of money they have. The program would
+	continue to reepat the same functions as mentioned above by comparing the card values and the money they have.
+
+Here are some error conditions that should be addressed in the program:
+	1) inserting money should be a double with numbers only. No symbols at all.
+	2) money should not be a fraction, variable, or char.
+	3) you cannot wager a negative value
+

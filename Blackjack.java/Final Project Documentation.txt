@@ -1,0 +1,55 @@
+BlackJack Documentation
+
+Formatting of the Blackjack Program: Thinking behind the main algorithms
+---------------------------------------------------------------------------------
+For the BlackJack program, I thought that it would be best to create a Player.java class. By creating a Player.java class, I was able to create each player as an object in the game
+and then create things that each and every player should do. For an example, since every player needs to each have a hand, a name, a record of how much money they have left as well as
+each player going through the BlackJack round, I set this all in Player.java.
+
+Also, by setting everything a player should do in Player.java, it allowed me to just run loops on methods inside Player.java from Blackjack.java. In essense, Blackjack.java merely
+controlled what the players were going through like an actual main engine/loop. Player.java, Card.java, and Deck.java all handled the calculations and technicalities behind the scenes.
+The important loops were setupRound(), startRound(), and endRound(). To simplify these rounds, methods were created such as hitting, splitting, Doubledown, compareScore, Insurance and
+many others were made to just plug into the rounds. The reason behind creating methods for these rounds is for the simpicity of just plugging things into the rounds. Doing this simplified
+the code and provided clarity to the true purpose of the round and removed technicalities from these methods that could have possibly clouded this purpose.
+
+For the Player constructor, the reason why there were so many variables that ended up being added on was because I had to keep track of whether or not the player was a dealer, if they had
+a hand that was possible to split, whether or not they won the round, and many others. The idea behind giving each player this many variables is because each player will have the same set
+of options/variables, allowing me to simply set whether or not this or that is true, modify any settings, etc. From here, I can use this information/data from each player object seperately
+to run loops and do calculations for their hand, money, and their wins by simply just calling them.
+
+Finally, for the repeat loop of BlackJack.java, I simply made methods that asked if the player was still playing or not. If there was one or more than one player playing (besides the dealer), then
+the game would continue until the player either quit or lost all their money. I did this by having a boolean that was set for each player indivudually whether or not they were still in the
+game or not. This is shown in the stillInGame() method, which checks if there are players left in the game, and then returns a boolean back to the main loop. This main loop is handled by a while loop
+that says that if people are still playing, run through the whole game engine again. If not, end the game and congratulate the player for winning.
+
+However, is another ending, which is when the dealer runs out of money. If the dealer runs out, that means all players have beaten the dealer. The special case (mentioned in comments) then prints out
+each person's name and their amounts of cash they left the "casino" with.
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Difficulties Faced During the Project
+---------------------------------------------------------------------------------
+There were many difficulties that were faced during the project. Here were some of them:
+	- Implementing adding/removing cards for each and every player. I received a lot of OutOfBounds. The solution I ended up implementing was to make a gigantic hand with null in all the hands.
+	  Then, all I had to do was count the elements in the hand array that weren't null. Doing so helped me fix this issue by eliminating the need to edit the array to add up everytime.
+
+	- Implementing the Ace was also another issue. However, this was solved by making a condition that if the player had an ace, I would show the highest value of the softhand until that highest
+	  value passes 21, then the softhand value does noy apply anymore.
+
+	- Counter system: The counter system was based on the hi-lo counting system. Instead of checking every array and adding them up, I implemented method that I called everytime a card was supposed
+	  to be shown. By doing so, a live counter was kept at all times and can be readily called every time I needed it.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Important Lessons Learned
+---------------------------------------------------------------------------------
+Overall, the project helped me realize that in order to suceed in computer science, I must learn to thin linearly. The best way at approaching this project was to plan everything out. I was really
+glad that I planned everything out because it allowed me to organize my methods and debug a lot faster compared to if I were to just jam code into the Blackjack rounds. Since I had a method for almost
+every action, if a certain action wasn't working in my program, I had a hint as to where the bug was because that action correleated to a method.
+
+Learning to keep organized in huge projects is essential for future developers who want to look at your code as well as going back to edit it.
+
+I also learned that commenting on virtually everything was a huge help. Since this project spanned over the course of a couple weeks, commenting helped refresh where I was and what I needed to work on 
+when I took a break and came back to the project. 
+
+Finally, I learned and had a lot of practice implementing objects and multiple instantiations. I feel like after this project, I am able to code almost everything because I was able to piece this project
+together. In conclusion, I am proud to present to you my Blackjack project!	

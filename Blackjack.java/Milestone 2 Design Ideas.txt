@@ -1,0 +1,8 @@
+To claim insurance: I can set a boolean for the player so that if the dealer gets an ace, it will ask each dealer by going
+	through the array of players and asking them if they want insurance or not. If the dealer hits 21, it will return
+	the half of the wager back to the dealer.
+
+Splitting: If a player's hand has the same face, it will ask the option to ask if the player would like to split. If it does, it will create another hand
+	for the player, which is in another array. the player will play each hand seperately and will each have its separate array with its own value.
+
+Doubling down: For the doubling down, I can create a method that will ask the player to double down once the first two cards are dealt.
